@@ -1,11 +1,11 @@
 version: "3.3"
 services:
   redis:
-    image: redis:latest
+    image: bitnami/redis:latest
     container_name: redis
     restart: always
-    volumes:
-      - redis_volume_data:/data
+    environment:
+      - REDIS_PASSWORD=DZQDZQ
     ports:
       - 6379:6379
       
