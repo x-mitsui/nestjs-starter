@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch via NPM",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "start:debug"],
+      "runtimeExecutable": "pnpm",
+      "runtimeVersion": "22.20.0",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "启动程序",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/index.js",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    }
+  ]
+}
