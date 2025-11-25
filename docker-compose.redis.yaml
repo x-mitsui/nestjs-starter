@@ -5,7 +5,7 @@ services:
     container_name: redis
     restart: always
     environment:
-      - REDIS_PASSWORD=DZQDZQ
+      - REDIS_PASSWORD=JSzii7s9zmD
     ports:
       - 6379:6379
       
