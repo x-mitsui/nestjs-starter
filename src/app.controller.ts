@@ -1,3 +1,4 @@
+import { PrismaService } from './database/prisma/prisma.service';
 import { MailerService } from '@nestjs-modules/mailer';
 import { CACHE_MANAGER, Cache } from '@nestjs/cache-manager';
 import {
@@ -16,6 +17,7 @@ export class AppController {
     @Inject(WINSTON_MODULE_NEST_PROVIDER) private readonly logger: Logger,
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
     private readonly mailerService: MailerService,
+    private prismaService: PrismaService,
   ) {}
 
   @Get()
@@ -51,5 +53,18 @@ export class AppController {
       .catch((err) => {
         this.logger.error(err);
       });
+  }
+
+  @Get('database')
+  @Version('1')
+  async testDB(): Promise<any> {
+    try {
+      const users = await this.prismaService.user.findMany();
+      console.log('user:', users);
+      return users;
+    } catch (error) {
+      console.error('Database error:', error);
+      return { error: error.message };
+    }
   }
 }

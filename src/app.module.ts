@@ -3,9 +3,10 @@ import { AppController } from '@/app.controller';
 import { ConfigModule } from '@/common/config/config/config.module';
 import { LogsModule } from '@/common/logger/logs.module';
 import { MailModule } from '@/common/mail/mail.module';
+import { PrismaModule } from './database/prisma/prisma.module';
 
 @Module({
-  imports: [ConfigModule, LogsModule, MailModule],
+  imports: [ConfigModule, LogsModule, MailModule, PrismaModule],
   controllers: [AppController],
   providers: [],
 })

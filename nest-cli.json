@@ -6,6 +6,14 @@
     "deleteOutDir": true,
     "builder": "swc",
     "watchAssets": true,
-    "assets": ["common/mail/templates/**/*.hbs", "assets/**/*"]
+    "assets": [
+      "common/mail/templates/**/*.hbs",
+      "assets/**/*",
+      {
+        "include": "../prisma/generated",
+        "outDir": "dist/prisma",
+        "watchAssets": true
+      }
+    ]
   }
 }

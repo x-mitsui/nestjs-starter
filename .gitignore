@@ -55,3 +55,14 @@ pids
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+/generated/prisma
+src/generated/prisma/browser.ts
+src/generated/prisma/client.ts
+src/generated/prisma/commonInputTypes.ts
+src/generated/prisma/enums.ts
+src/generated/prisma/models.ts
+src/generated/prisma/internal/class.ts
+src/generated/prisma/internal/prismaNamespace.ts
+src/generated/prisma/internal/prismaNamespaceBrowser.ts
+src/generated/prisma/models/User.ts
