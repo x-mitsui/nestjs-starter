@@ -1,6 +1,6 @@
 services:
   db:
-    images: mysql
+    image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
